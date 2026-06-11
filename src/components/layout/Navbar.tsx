@@ -69,9 +69,9 @@ const Navbar = () => {
         <div className="border-border-dark flex cursor-pointer items-center justify-center rounded-full border p-3">
           <Moon />
         </div>
-        <button className="bg-accent-press hover:bg-accent-hover cursor-pointer rounded-md px-3 py-2 transition-all duration-75">
+        <a className="bg-accent-press hover:bg-accent-hover cursor-pointer rounded-md px-3 py-2.5 text-sm transition-all duration-75" href="/cv.pdf" download>
           Download CV
-        </button>
+        </a>
       </div>
 
       {/* Mobile hamburger */}
@@ -104,9 +104,9 @@ const Navbar = () => {
               <div className="border-border-dark flex cursor-pointer items-center justify-center rounded-full border p-2">
                 <Moon size={18} />
               </div>
-              <button className="bg-accent-press hover:bg-accent-hover cursor-pointer rounded-md px-3 py-2 text-sm transition-all duration-75">
+              <a className="bg-accent-press hover:bg-accent-hover cursor-pointer rounded-md px-3 py-2 text-sm transition-all duration-75" href="/cv.pdf" download>
                 Download CV
-              </button>
+              </a>
             </div>
           </ul>
         </div>

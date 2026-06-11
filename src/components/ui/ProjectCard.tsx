@@ -10,11 +10,11 @@ interface ProjectCardType {
 const ProjectCard = ({ project }: ProjectCardType) => {
   return (
     <article className="project">
-      <div className="project_top flex items-center justify-between mb-3">
+      <div className="project_top mb-3 flex items-center justify-between">
         <span className="project__glyph">
           <ProjectGlyph name={project.glyph} />
         </span>
-        <span className="font-mono text-text-muted text-sm">{project.year}</span>
+        <span className="text-text-muted font-mono text-sm">{project.year}</span>
       </div>
       <h3 className="project__title mb-1.5">{project.title}</h3>
       <p className="project__desc">{project.description}</p>
@@ -25,7 +25,7 @@ const ProjectCard = ({ project }: ProjectCardType) => {
         ))}
       </div>
 
-      <div className="project__links flex items-center pt-10 border-t border-border-dark gap-10">
+      <div className="project__links border-border-dark flex items-center gap-10 border-t pt-10">
         <a className="plink" href={project.github} target="_blank" rel="noopener noreferrer">
           <GitBranch />
           Code

@@ -1,7 +1,5 @@
 import { Experience } from "../types";
 
-
-
 export const experiences: Experience[] = [
   {
     period: "2023 — Present",

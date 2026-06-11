@@ -21,12 +21,10 @@ const FeaturedProjects = () => {
             <ArrowRight className="text-accent" /> View all
           </Link>
         </div>
-        <div className="mt-10 grid grid--3">
-          {
-                featuredProject.map((feture) => (
-                    <ProjectCard key={feture.id} project={feture}/>
-                ))
-            }
+        <div className="grid--3 mt-10 grid">
+          {featuredProject.map((feture) => (
+            <ProjectCard key={feture.id} project={feture} />
+          ))}
 
           {/* <ProjectCard project={featuredProject[0]} /> */}
         </div>

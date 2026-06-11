@@ -39,11 +39,47 @@ export interface Project {
 
 export type ProjectGlyph = "chart" | "shield" | "nodes" | "terminal" | "activity" | "box";
 
-
 export interface Experience {
   period: string;
-  kind: 'Education' | 'Experience';
+  kind: "Education" | "Experience";
   title: string;
   org: string;
   description: string;
+}
+
+export type skillLevel = "beginner" | "intermediate" | "advanced";
+
+export type IconName =
+  | "atom"
+  | "file-code"
+  | "layers"
+  | "palette"
+  | "triangle"
+  | "flame"
+  | "hexagon"
+  | "database"
+  | "share-2"
+  | "zap"
+  | "braces"
+  | "layers-3"
+  | "container"
+  | "git-branch"
+  | "cloud"
+  | "git-merge"
+  | "boxes"
+  | "figma"
+  | "monitor"
+  | "server"
+  | "wrench";
+
+export interface Skills {
+  name: string;
+  icon: string;
+  level: skillLevel;
+}
+
+export interface SkillCategory {
+  name: string;
+  icon: IconName;
+  skills: Skills[];
 }

@@ -11,30 +11,27 @@ const page = () => {
             <div className="avatar__ph">[ replace with a real photo ]</div>
           </div>
 
-            <div className="about-bio">
-              <span className="over-line">
-                <span className="idx">·</span> About me
-              </span>
-              <h1 style={{ fontSize: "clamp(28px,4vw,42px)", marginTop: 14 }}>
-                {profile.name}
-              </h1>
-              <p className="role">
-                {profile.role} · {profile.location}
-              </p>
+          <div className="about-bio">
+            <span className="over-line">
+              <span className="idx">·</span> About me
+            </span>
+            <h1 style={{ fontSize: "clamp(28px,4vw,42px)", marginTop: 14 }}>{profile.name}</h1>
+            <p className="role">
+              {profile.role} · {profile.location}
+            </p>
 
-              {profile.bio.map((paragraph, index) =>
-                index === 0 ? (
-                  <p className="lead" key={index}>
-                    {paragraph}
-                  </p>
-                ) : (
-                  <p style={{ color: "var(--text-2)" }} key={index}>
-                    {paragraph}
-                  </p>
-                )
-              )}
-
-            </div>
+            {profile.bio.map((paragraph, index) =>
+              index === 0 ? (
+                <p className="lead" key={index}>
+                  {paragraph}
+                </p>
+              ) : (
+                <p style={{ color: "var(--text-2)" }} key={index}>
+                  {paragraph}
+                </p>
+              )
+            )}
+          </div>
         </div>
 
         <div style={{ marginTop: 88 }}>
