@@ -105,10 +105,39 @@
   }
 }
 
+/* =========================
+   THEME OVERRIDES
+   The @theme block above defines the default (dark) palette.
+   [data-theme="light"] swaps the same variables for light values.
+   ========================= */
+
+:root {
+  color-scheme: dark;
+}
+
+[data-theme="light"] {
+  color-scheme: light;
+
+  --color-bg-0: var(--color-surface-sidebar);
+  --color-bg-1: var(--color-surface-white);
+  --color-card: var(--color-surface-white);
+  --color-raised: var(--color-surface-hover);
+  --color-border-dark: var(--color-border-light);
+
+  --color-text-primary: var(--color-text-dark);
+  --color-text-secondary: #4b5468;
+  --color-text-muted: #6f7690;
+
+  --shadow-card: 0 4px 16px rgba(15, 23, 42, 0.06);
+  --shadow-hover: 0 10px 30px rgba(15, 23, 42, 0.1);
+  --shadow-glow: 0 0 24px rgba(152, 124, 255, 0.25);
+}
+
 body {
   background: var(--color-bg-0);
   color: var(--color-text-primary);
   font-family: var(--font-body);
+  transition: background-color 0.2s var(--ease-standard), color 0.2s var(--ease-standard);
 }
 
 @layer base {
@@ -535,5 +564,18 @@ body {
 .social-link__val { font-size: 15px; font-weight: 500; color: var(--color-text-primary); }
 .social-link__go { margin-left: auto; color: var(--color-text-muted); transition: color 0.2s var(--ease-standard), transform 0.2s var(--ease-standard); }
 .social-link:hover .social-link__go { color: var(--color-accent); transform: translateX(2px); }
+
+/* ---------- Theme toggle ---------- */
+.theme-toggle__sun,
+.theme-toggle__moon {
+  display: none;
+}
+[data-theme="dark"] .theme-toggle__moon,
+:root:not([data-theme]) .theme-toggle__moon {
+  display: block;
+}
+[data-theme="light"] .theme-toggle__sun {
+  display: block;
+}
 
 }

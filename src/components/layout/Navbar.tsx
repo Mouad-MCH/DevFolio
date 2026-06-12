@@ -1,12 +1,13 @@
 "use client";
 
 import { profile } from "@/src/data/profile";
-import { Menu, Moon, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { ScrambleTextPlugin } from "gsap/ScrambleTextPlugin";
+import ThemeToggle from "../ui/ThemeToggle";
 
 gsap.registerPlugin(ScrambleTextPlugin);
 
@@ -66,9 +67,7 @@ const Navbar = () => {
 
       {/* Desktop actions */}
       <div className="hidden items-center gap-5 md:flex">
-        <div className="border-border-dark flex cursor-pointer items-center justify-center rounded-full border p-3">
-          <Moon />
-        </div>
+        <ThemeToggle />
         <a className="bg-accent-press hover:bg-accent-hover cursor-pointer rounded-md px-3 py-2.5 text-sm transition-all duration-75" href="/cv.pdf" download>
           Download CV
         </a>
@@ -101,9 +100,7 @@ const Navbar = () => {
               );
             })}
             <div className="border-border-dark mt-2 flex items-center gap-3 border-t pt-3">
-              <div className="border-border-dark flex cursor-pointer items-center justify-center rounded-full border p-2">
-                <Moon size={18} />
-              </div>
+              <ThemeToggle className="p-2" />
               <a className="bg-accent-press hover:bg-accent-hover cursor-pointer rounded-md px-3 py-2 text-sm transition-all duration-75" href="/cv.pdf" download>
                 Download CV
               </a>
